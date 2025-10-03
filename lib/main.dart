@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tasktune/screens/home_page.dart';
+import 'package:tasktune/screens/settings_page.dart';
+import 'package:tasktune/screens/stats_page.dart';
 
 void main() {
   runApp(const App());
@@ -95,39 +98,6 @@ class _AppState extends State<App> {
           ],
         ),
       ),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text('홈페이지'),
-    );
-  }
-}
-
-class StatsPage extends StatelessWidget {
-  const StatsPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text('통계 페이지'),
-    );
-  }
-}
-
-class SettingsPage extends StatelessWidget {
-  const SettingsPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text('설정 페이지'),
     );
   }
 }
