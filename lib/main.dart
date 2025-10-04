@@ -21,6 +21,14 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Theme',
+      theme: ThemeData(
+        primaryColor: Colors.blue,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+        splashColor: Colors.transparent,
+        highlightColor: Colors.transparent,
+        hoverColor: Colors.transparent,
+      ),
       home: Scaffold(
         body: Row(
           children: [
@@ -132,9 +140,6 @@ class MenuItem extends StatelessWidget {
       color: selected ? Colors.grey.shade200 : Colors.transparent,
       child: InkWell(
         onTap: onTap,
-        splashColor: Colors.transparent,
-        highlightColor: Colors.transparent,
-        hoverColor: Colors.transparent,
         child: SizedBox(
           height: 50,
           child: Center(
