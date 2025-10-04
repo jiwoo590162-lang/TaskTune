@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tasktune/screens/home_page.dart';
+import 'package:tasktune/screens/dashboard_page.dart';
 import 'package:tasktune/screens/analyze_page.dart';
 import 'package:tasktune/screens/settings_page.dart';
 import 'package:tasktune/screens/stats_page.dart';
@@ -21,7 +21,7 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Theme',
+      title: 'TaskTune',
       theme: ThemeData(
         primaryColor: Colors.blue,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
@@ -59,8 +59,8 @@ class _AppState extends State<App> {
                         Column(
                           children: [
                             MenuItem(
-                              icon: Icons.home_rounded,
-                              label: '홈',
+                              icon: Icons.dashboard_rounded,
+                              label: '대시보드',
                               selected: selected == 0,
                               onTap: () => setState(() => selected = 0),
                             ),
@@ -105,7 +105,7 @@ class _AppState extends State<App> {
               child: IndexedStack(
                 index: selected,
                 children: [
-                  const HomePage(),
+                  const DashboardPage(),
                   const AnalyzePage(),
                   const StatsPage(),
                   const SettingsPage(),
