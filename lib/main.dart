@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tasktune/screens/home_page.dart';
+import 'package:tasktune/screens/analyze_page.dart';
 import 'package:tasktune/screens/settings_page.dart';
 import 'package:tasktune/screens/stats_page.dart';
 
@@ -23,7 +24,7 @@ class _AppState extends State<App> {
       home: Scaffold(
         body: Row(
           children: [
-            // 사이드바
+            // --- 사이드바 ---
             SizedBox(
               width: 220,
               child: Column(
@@ -56,10 +57,16 @@ class _AppState extends State<App> {
                               onTap: () => setState(() => selected = 0),
                             ),
                             MenuItem(
-                              icon: Icons.bar_chart_rounded,
-                              label: '통계',
+                              icon: Icons.checklist_rounded,
+                              label: '할 일 분석',
                               selected: selected == 1,
                               onTap: () => setState(() => selected = 1),
+                            ),
+                            MenuItem(
+                              icon: Icons.bar_chart_rounded,
+                              label: '통계',
+                              selected: selected == 2,
+                              onTap: () => setState(() => selected = 2),
                             ),
                           ],
                         ),
@@ -69,8 +76,8 @@ class _AppState extends State<App> {
                             MenuItem(
                               icon: Icons.settings_rounded,
                               label: '설정',
-                              selected: selected == 2,
-                              onTap: () => setState(() => selected = 2),
+                              selected: selected == 3,
+                              onTap: () => setState(() => selected = 3),
                             ),
                           ],
                         ),
@@ -80,16 +87,18 @@ class _AppState extends State<App> {
                 ],
               ),
             ),
+            // --- 구분선 ---
             Container(
               width: 1,
               color: Colors.grey,
             ),
-            // 메인 화면
+            // --- 메인 화면 ---
             Expanded(
               child: IndexedStack(
                 index: selected,
                 children: [
                   const HomePage(),
+                  const AnalyzePage(),
                   const StatsPage(),
                   const SettingsPage(),
                 ],
@@ -102,6 +111,7 @@ class _AppState extends State<App> {
   }
 }
 
+// ------- 메뉴 아이템 -------
 class MenuItem extends StatelessWidget {
   final IconData icon;
   final String label;
