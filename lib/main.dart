@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:dart_openai/dart_openai.dart';
-import 'package:tasktune/env/env.dart';
 import 'package:tasktune/screens/dashboard_page.dart';
 import 'package:tasktune/screens/analyze_page.dart';
 import 'package:tasktune/screens/settings_page.dart';
 import 'package:tasktune/screens/stats_page.dart';
 
 void main() {
-  OpenAI.apiKey = Env.apiKey;
   runApp(const App());
 }
 
